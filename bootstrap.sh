@@ -24,8 +24,6 @@ which containerd || apt-get install -y --no-install-recommends containerd
     # Install containerd if it's not present -- prevents breaking docker-ce installations
 
 
-sudo mkdir -p /opt/cni/bin
-curl -sSL https://github.com/containernetworking/plugins/releases/download/${CNI_VERSION}/cni-plugins-linux-${ARCH}-${CNI_VERSION}.tgz | sudo tar -xz -C /opt/cni/bin
 
 export VERSION=v0.7.0
 export GOARCH=$(go env GOARCH 2>/dev/null || echo "amd64")
@@ -34,9 +32,11 @@ for binary in ignite ignited; do
     echo "Installing ${binary}..."
     which ${binary} ||
     (
+      mkdir -p /opt/cni/bin
+      curl -sSL https://github.com/containernetworking/plugins/releases/download/${CNI_VERSION}/cni-plugins-linux-${ARCH}-${CNI_VERSION}.tgz | sudo tar -xz -C /opt/cni/bin
       curl -sfLo ${binary} https://github.com/weaveworks/ignite/releases/download/${VERSION}/${binary}-${GOARCH}
       chmod +x ${binary}
-      sudo mv ${binary} /usr/local/bin
+      mv ${binary} /usr/local/bin
     )
 done
 
