@@ -18,7 +18,7 @@ sudo add-apt-repository \
 apt-get update
 apt-get install apt-transport-https ca-certificates gnupg-agent \
 software-properties-common docker-ce docker-ce-cli containerd.io \
-qemu-guest-agent openssh-server -y 
+qemu-guest-agent openssh-server qemu-kvm libvirt-clients libvirt-daemon-system -y 
 apt-get install -y --no-install-recommends dmsetup openssh-client git binutils  
 which containerd || apt-get install -y --no-install-recommends containerd
     # Install containerd if it's not present -- prevents breaking docker-ce installations
