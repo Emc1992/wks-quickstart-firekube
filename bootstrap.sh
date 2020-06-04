@@ -19,10 +19,11 @@ apt-get update
 apt-get install apt-transport-https ca-certificates gnupg-agent \
 software-properties-common docker-ce docker-ce-cli containerd.io \
 qemu-guest-agent openssh-server -y 
-apt-get install -y --no-install-recommends dmsetup openssh-client git binutils kubectl 
+apt-get install -y --no-install-recommends dmsetup openssh-client git binutils  
 which containerd || apt-get install -y --no-install-recommends containerd
     # Install containerd if it's not present -- prevents breaking docker-ce installations
 
+which kubectl || curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
 
 export VERSION=v0.7.0
