@@ -48,5 +48,6 @@ done
 
 git config --global user.name "debian"
 git config --global user.email "emccudden@gmail.com"
+ssh-keyscan github.com >> ~/.ssh/known_hosts
 #ssh-keygen -t rsa -b 4096 -C "emccudden@gmail" -f "~/.ssh/id_rsa"  -N ""
 
