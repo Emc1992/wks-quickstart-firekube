@@ -20,7 +20,7 @@ apt-get install \
     apt-transport-https \
     ca-certificates \
     gnupg-agent \
-    software-properties-common
+    software-properties-common -y
 
 apt-get install docker-ce docker-ce-cli containerd.io   
 apt-get install -y --no-install-recommends dmsetup openssh-client git binutils kubelet 
