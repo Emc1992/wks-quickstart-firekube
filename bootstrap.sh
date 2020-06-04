@@ -22,7 +22,7 @@ apt-get install \
     gnupg-agent \
     software-properties-common -y
 
-apt-get install docker-ce docker-ce-cli containerd.io   
+apt-get install docker-ce docker-ce-cli containerd.io -y 
 apt-get install -y --no-install-recommends dmsetup openssh-client git binutils kubelet 
 which containerd || apt-get install -y --no-install-recommends containerd
     # Install containerd if it's not present -- prevents breaking docker-ce installations
