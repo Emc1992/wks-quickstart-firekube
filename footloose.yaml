@@ -10,7 +10,7 @@ machines:
       diskSize: 5GB
       kernel: weaveworks/ignite-kernel:4.19.47
       memory: 1GB
-    image: weaveworks/ignite-alpine
+    image: weaveworks/ignite-centos:firekube-pre3
     name: node%d
     portMappings:
     - containerPort: 22
