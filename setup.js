@@ -18,7 +18,7 @@ const backend = {
     }]
   },
   ignite: {
-    image: 'weaveworks/ignite-apline',
+    image: 'weaveworks/ignite-alpine',
     privileged: false,
     volumes: [],
   },
