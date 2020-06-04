@@ -23,7 +23,12 @@ apt-get install -y --no-install-recommends dmsetup openssh-client git binutils
 which containerd || apt-get install -y --no-install-recommends containerd
     # Install containerd if it's not present -- prevents breaking docker-ce installations
 
-which kubectl || curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+which kubectl || 
+(curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl 
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl version --client
+)
 
 
 export VERSION=v0.7.0
