@@ -46,4 +46,7 @@ for binary in ignite ignited; do
     )
 done
 
-cd /tmp
+git config --global user.name "debian"
+git config --global user.email "emccudden@gmail.com"
+#ssh-keygen -t rsa -b 4096 -C "emccudden@gmail" -f "~/.ssh/id_rsa"  -N ""
+
